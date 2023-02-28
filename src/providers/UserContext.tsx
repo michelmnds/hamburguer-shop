@@ -37,7 +37,7 @@ export interface iDefaultErrorMessage {
   error: string;
 }
 
-export const token: any | string | null = localStorage.getItem('@TOKEN');
+export const token: string | null = localStorage.getItem('@TOKEN');
 
 export const UserContext = createContext({} as iUserContext);
 

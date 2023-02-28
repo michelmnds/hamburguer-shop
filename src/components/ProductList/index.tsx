@@ -3,19 +3,10 @@ import { StyledProductList } from './style';
 import ProductCard from './ProductCard';
 import { token } from '../../providers/UserContext';
 import { api } from '../../services/api';
-
-export interface iProductCard {
-  product: [];
-  key: any;
-  name: never;
-  id: never;
-  category: never;
-  img: never;
-  price: never;
-}
+import { iProduct } from '../../interfaces';
 
 const ProductList = () => {
-  const [products, setProducts] = useState<[]>([]);
+  const [products, setProducts] = useState<iProduct[]>([]);
 
   useEffect(() => {
     const loadProducts = async () => {
@@ -35,7 +26,7 @@ const ProductList = () => {
 
   return (
     <StyledProductList>
-      {products.map((product: iProductCard) => (
+      {products.map((product) => (
         <ProductCard product={product} key={product.id} />
       ))}
     </StyledProductList>
