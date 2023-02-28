@@ -1,13 +1,19 @@
-import { useContext, useEffect } from 'react';
+import { useContext } from 'react';
 import { toast } from 'react-toastify';
 import { StyledProductCard } from './style';
 import { StyledButton } from '../../../styles/button';
 import { StyledParagraph, StyledTitle } from '../../../styles/typography';
 import { CartContext } from '../../../providers/CartContext';
 
-const ProductCard = ({ name, id, img, category, price, product }: any) => {
-  const { setCartProducts, cartProducts, totalPrice, setTotalPrice } =
-    useContext(CartContext);
+const ProductCard = ({
+  name,
+  id,
+  img,
+  category,
+  price,
+  product,
+}: any & never) => {
+  const { cartProducts, totalPrice, setTotalPrice } = useContext(CartContext);
 
   return (
     <StyledProductCard>
@@ -26,7 +32,7 @@ const ProductCard = ({ name, id, img, category, price, product }: any) => {
               toast.error('Este produto já está no carrinho');
             } else {
               cartProducts.push(product);
-              setTotalPrice(totalPrice + product.price);
+              setTotalPrice(totalPrice + price);
               toast.success('Produto adicionado com sucesso!');
             }
           }}
