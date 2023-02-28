@@ -40,16 +40,20 @@ const LoginForm = () => {
   return (
     <StyledForm onSubmit={handleSubmit(submitForm)}>
       <Input
-        label='Nome'
-        type='text'
+        textFieldInputProps={{
+          label: 'Nome',
+          type: 'text',
+          ...register('email'),
+        }}
         message={errors.email?.message}
-        {...register('email')}
       />
       <Input
-        label='Senha'
-        type='password'
+        textFieldInputProps={{
+          label: 'Senha',
+          type: 'password',
+          ...register('password'),
+        }}
         message={errors.password?.message}
-        {...register('password')}
       />
       <StyledButton type='submit' $buttonSize='default' $buttonStyle='green'>
         Entrar

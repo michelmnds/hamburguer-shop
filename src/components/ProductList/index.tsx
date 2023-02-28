@@ -36,15 +36,7 @@ const ProductList = () => {
   return (
     <StyledProductList>
       {products.map((product: iProductCard) => (
-        <ProductCard
-          product={product}
-          key={product.id}
-          name={product.name}
-          category={product.category}
-          id={product.id}
-          img={product.img}
-          price={product.price}
-        />
+        <ProductCard product={product} key={product.id} />
       ))}
     </StyledProductList>
   );

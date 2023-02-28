@@ -5,10 +5,6 @@ import { StyledCartProductCard } from './style';
 import { StyledTitle } from '../../../../styles/typography';
 import { CartContext } from '../../../../providers/CartContext';
 
-interface iNewList {
-  newList: [];
-}
-
 const CartProductCard = ({ name, img, id, price }: any) => {
   const { cartProducts, setCartProducts, totalPrice, setTotalPrice } =
     useContext(CartContext);
@@ -27,9 +23,7 @@ const CartProductCard = ({ name, img, id, price }: any) => {
           type='button'
           aria-label='Remover'
           onClick={() => {
-            const newList: iNewList | never[] = cartProducts.filter(
-              (product: any) => product.id !== id
-            );
+            const newList = cartProducts.filter((product) => product.id !== id);
             setTotalPrice(totalPrice - price);
             setCartProducts(newList);
           }}

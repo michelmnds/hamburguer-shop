@@ -4,25 +4,29 @@ import { StyledProductCard } from './style';
 import { StyledButton } from '../../../styles/button';
 import { StyledParagraph, StyledTitle } from '../../../styles/typography';
 import { CartContext } from '../../../providers/CartContext';
+import { iProduct } from '../../../interfaces';
 
-const ProductCard = (
-  { name, id, img, category, price }: any,
-  { product }: never
-) => {
+interface iProductCardProps {
+  product: iProduct;
+}
+
+const ProductCard = ({ product }: iProductCardProps) => {
   const { cartProducts, totalPrice, setTotalPrice } = useContext(CartContext);
 
   return (
     <StyledProductCard>
       <div className='imageBox'>
-        <img src={img} alt={category} />
+        <img src={product.img} alt={product.category} />
       </div>
       <div className='content'>
         <StyledTitle tag='h3' $fontSize='three'>
-          {name}
+          {product.name}
         </StyledTitle>
-        <StyledParagraph className='category'>{category}</StyledParagraph>
+        <StyledParagraph className='category'>
+          {product.category}
+        </StyledParagraph>
         <StyledParagraph className='price'>
-          R${Math.floor(price)},00
+          R${Math.floor(product.price)},00
         </StyledParagraph>
         <StyledButton
           onClick={() => {
@@ -30,11 +34,10 @@ const ProductCard = (
               toast.error('Este produto já está no carrinho');
             } else {
               cartProducts.push(product);
-              setTotalPrice(Math.floor(totalPrice + price));
+              setTotalPrice(Math.floor(totalPrice + product.price));
               toast.success('Produto adicionado com sucesso!');
             }
           }}
-          id={id}
           $buttonSize='medium'
           $buttonStyle='green'
         >
