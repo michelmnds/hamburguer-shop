@@ -5,14 +5,7 @@ import { StyledButton } from '../../../styles/button';
 import { StyledParagraph, StyledTitle } from '../../../styles/typography';
 import { CartContext } from '../../../providers/CartContext';
 
-const ProductCard = ({
-  name,
-  id,
-  img,
-  category,
-  price,
-  product,
-}: any & never) => {
+const ProductCard = ({ name, id, img, category, price, product }: never) => {
   const { cartProducts, totalPrice, setTotalPrice } = useContext(CartContext);
 
   return (
@@ -25,14 +18,16 @@ const ProductCard = ({
           {name}
         </StyledTitle>
         <StyledParagraph className='category'>{category}</StyledParagraph>
-        <StyledParagraph className='price'>R${price},00</StyledParagraph>
+        <StyledParagraph className='price'>
+          R${Math.floor(price)},00
+        </StyledParagraph>
         <StyledButton
           onClick={() => {
             if (cartProducts.includes(product)) {
               toast.error('Este produto já está no carrinho');
             } else {
               cartProducts.push(product);
-              setTotalPrice(totalPrice + price);
+              setTotalPrice(Math.floor(totalPrice + price));
               toast.success('Produto adicionado com sucesso!');
             }
           }}

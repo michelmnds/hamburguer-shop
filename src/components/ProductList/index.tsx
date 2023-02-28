@@ -4,6 +4,16 @@ import ProductCard from './ProductCard';
 import { token } from '../../providers/UserContext';
 import { api } from '../../services/api';
 
+export interface iProductCard {
+  product: [];
+  key: any;
+  name: never;
+  id: never;
+  category: never;
+  img: never;
+  price: never;
+}
+
 const ProductList = () => {
   const [products, setProducts] = useState<[]>([]);
 
@@ -16,7 +26,6 @@ const ProductList = () => {
           },
         });
         setProducts(response.data);
-        console.log(products);
       } catch (error) {
         console.log(error);
       }
@@ -26,7 +35,7 @@ const ProductList = () => {
 
   return (
     <StyledProductList>
-      {products.map((product: any) => (
+      {products.map((product: iProductCard) => (
         <ProductCard
           product={product}
           key={product.id}

@@ -17,8 +17,8 @@ export interface iCartContext {
   cartModal: boolean;
   setCartModal: React.Dispatch<React.SetStateAction<boolean>>;
   closeModal: () => void;
-  cartProducts: [];
-  setCartProducts: React.Dispatch<React.SetStateAction<[]>>;
+  cartProducts: [] | never[];
+  setCartProducts: React.Dispatch<React.SetStateAction<[] | never[]>>;
   totalPrice: number;
   setTotalPrice: React.Dispatch<React.SetStateAction<number>>;
 }
@@ -27,7 +27,7 @@ export const CartContext = createContext({} as iCartContext);
 
 export const CartProvider = ({ children }: iCartContextProps) => {
   const [cartModal, setCartModal] = useState<false | true>(true);
-  const [cartProducts, setCartProducts] = useState<[]>([]);
+  const [cartProducts, setCartProducts] = useState<[] | never[]>([]);
 
   const closeModal = () => {
     setCartModal(!cartModal);

@@ -21,6 +21,7 @@ const CartProductList = () => {
               name={product.name}
               img={product.img}
               id={product.id}
+              price={product.price}
             />
           ))}
         </ul>
@@ -29,7 +30,9 @@ const CartProductList = () => {
           <StyledParagraph>
             <strong>Total</strong>
           </StyledParagraph>
-          <StyledParagraph className='total'>R${totalPrice},00</StyledParagraph>
+          <StyledParagraph className='total'>
+            R${Math.round(totalPrice)},00
+          </StyledParagraph>
         </div>
         <StyledButton
           $buttonSize='default'
