@@ -5,7 +5,10 @@ import { StyledButton } from '../../../styles/button';
 import { StyledParagraph, StyledTitle } from '../../../styles/typography';
 import { CartContext } from '../../../providers/CartContext';
 
-const ProductCard = ({ name, id, img, category, price, product }: never) => {
+const ProductCard = (
+  { name, id, img, category, price }: any,
+  { product }: never
+) => {
   const { cartProducts, totalPrice, setTotalPrice } = useContext(CartContext);
 
   return (
