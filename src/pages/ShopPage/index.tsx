@@ -9,13 +9,6 @@ import { StyledContainer } from '../../styles/grid';
 
 const ShopPage = () => {
   const { cartModal, setCartModal } = useContext(CartContext);
-  const [search, setSearch] = useState<null | string>('');
-
-  // const searchProductsList = products.filter((product) => {
-  //   return search === ''
-  //     ? true
-  //     : product.name.toLowerCase().includes(search.toLowerCase());
-  // });
 
   useEffect(() => {
     setCartModal(false);

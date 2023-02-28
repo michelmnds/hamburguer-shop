@@ -45,5 +45,6 @@ const CartProductList = () => {
       </StyledCartProductList>
     );
   }
+  return <StyledCartProductList />;
 };
 export default CartProductList;
