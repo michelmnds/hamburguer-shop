@@ -1,6 +1,6 @@
-#📝 Description
+📝 Description
 
 Fully functional and responsive ecommerce burger shop
 
-#✅ TODO 
+✅ TODO 
 - Functional search bar
