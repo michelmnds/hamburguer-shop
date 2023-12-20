@@ -26,22 +26,22 @@ const ProductCard = ({ product }: iProductCardProps) => {
           {product.category}
         </StyledParagraph>
         <StyledParagraph className='price'>
-          R${Math.floor(product.price)},00
+          ${Math.floor(product.price)},00
         </StyledParagraph>
         <StyledButton
           onClick={() => {
             if (cartProducts.includes(product)) {
-              toast.error('Este produto já está no carrinho');
+              toast.error('This product is already added!');
             } else {
               cartProducts.push(product);
               setTotalPrice(Math.floor(totalPrice + product.price));
-              toast.success('Produto adicionado com sucesso!');
+              toast.success('Product successfully added!');
             }
           }}
           $buttonSize='medium'
           $buttonStyle='green'
         >
-          Adicionar
+          Add to cart
         </StyledButton>
       </div>
     </StyledProductCard>

@@ -17,14 +17,15 @@ const LoginPage = () => (
             </StyledTitle>
             <LoginForm />
             <StyledParagraph textAlign='center' fontColor='gray'>
-              Crie sua conta para saborear muitas delícias e matar sua fome!
+              Create your account to taste lots of delicacies and satisfy your
+              hunger!
             </StyledParagraph>
             <StyledButtonLink
               to='/register'
               $buttonSize='default'
               $buttonStyle='gray'
             >
-              Cadastrar
+              Register
             </StyledButtonLink>
           </StyledGridBox>
         </div>

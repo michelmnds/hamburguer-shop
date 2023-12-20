@@ -10,8 +10,8 @@ const IllustrationBox = () => (
     <div className='styledBox'>
       <img src={Icon} alt='Ícone de cesta de compras' />
       <StyledParagraph>
-        A vida é como um sanduíche, é preciso recheá-la com os{' '}
-        <strong>melhores</strong> ingredientes.
+        Life is like a sandwich, you need to fill it with{' '}
+        <strong>the best </strong> ingredients.
       </StyledParagraph>
     </div>
     <img className='ballsImage' src={BallsIllustration} alt='Bolinhas' />

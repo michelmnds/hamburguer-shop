@@ -28,10 +28,10 @@ const CartProductList = () => {
 
         <div className='totalBox'>
           <StyledParagraph>
-            <strong>Total</strong>
+            <strong>Total price</strong>
           </StyledParagraph>
           <StyledParagraph className='total'>
-            R${Math.round(totalPrice)},00
+            ${Math.round(totalPrice)},00
           </StyledParagraph>
         </div>
         <StyledButton
@@ -40,10 +40,10 @@ const CartProductList = () => {
           onClick={() => {
             setCartProducts([]);
             setTotalPrice(0);
-            toast.success('Todos os produtos foram removidos com sucesso!');
+            toast.success('All the products were successfully removed!');
           }}
         >
-          Remover todos
+          Remove all
         </StyledButton>
       </StyledCartProductList>
     );

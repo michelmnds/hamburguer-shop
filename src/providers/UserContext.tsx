@@ -62,7 +62,6 @@ export const UserProvider = ({ children }: iUserContextProps) => {
       localStorage.setItem('@TOKEN', response.data.accessToken);
 
       navigate('/shop');
-      console.log(response.data);
     } catch (error: any) {
       toast.error(error.response?.data);
     }

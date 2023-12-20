@@ -18,16 +18,16 @@ interface iRegisterFormData {
 }
 
 const schema = yup.object().shape({
-  name: yup.string().required('Preencha o campo do nome'),
-  email: yup.string().required('Preencha o campo do email').email(),
+  name: yup.string().required('Fill the name field'),
+  email: yup.string().required('Fill the email field').email(),
   password: yup
     .string()
-    .required('Preencha o campo da senha')
-    .matches(/.{6,}/, 'Sua senha deve conter no mínimo 6 caracteres'),
+    .required('Fill the password field')
+    .matches(/.{6,}/, 'You password must have at least 6 characters'),
   confirmPassword: yup
     .string()
-    .required('Preencha o campo de confirmar senha')
-    .oneOf([yup.ref('password')], 'Confirme sua senha'),
+    .required('Fill the confirm password field')
+    .oneOf([yup.ref('password')], 'Confirm your password'),
 });
 
 const RegisterForm = () => {
@@ -51,7 +51,7 @@ const RegisterForm = () => {
     <StyledForm onSubmit={handleSubmit(submitForm)}>
       <Input
         textFieldInputProps={{
-          label: 'Nome',
+          label: 'Name',
           type: 'text',
           ...register('name'),
         }}
@@ -67,7 +67,7 @@ const RegisterForm = () => {
       />
       <Input
         textFieldInputProps={{
-          label: 'Senha',
+          label: 'Password',
           type: 'password',
           ...register('password'),
         }}
@@ -75,14 +75,14 @@ const RegisterForm = () => {
       />
       <Input
         textFieldInputProps={{
-          label: 'Confirmar senha',
+          label: 'Confirmar password',
           type: 'password',
           ...register('confirmPassword'),
         }}
         message={errors.confirmPassword?.message}
       />
       <StyledButton $buttonSize='default' $buttonStyle='gray' type='submit'>
-        Cadastrar
+        Register
       </StyledButton>
     </StyledForm>
   );

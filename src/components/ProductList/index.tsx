@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { StyledProductList } from './style';
 import ProductCard from './ProductCard';
-import { token } from '../../providers/UserContext';
+
 import { api } from '../../services/api';
 import { iProduct } from '../../interfaces';
 
@@ -9,6 +9,7 @@ const ProductList = () => {
   const [products, setProducts] = useState<iProduct[]>([]);
 
   useEffect(() => {
+    const token: string | null = localStorage.getItem('@TOKEN');
     const loadProducts = async () => {
       try {
         const response = await api.get('/products', {

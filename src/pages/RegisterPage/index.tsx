@@ -19,9 +19,9 @@ const RegisterPage = () => (
           <StyledGridBox className='formBox'>
             <header>
               <StyledTitle tag='h1' $fontSize='three'>
-                Cadastro
+                Register
               </StyledTitle>
-              <Link to='/'>Retornar para o login</Link>
+              <Link to='/'>Back to login page</Link>
             </header>
 
             <RegisterForm />

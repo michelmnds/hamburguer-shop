@@ -16,7 +16,7 @@ const CartModal = () => {
         <dialog>
           <header>
             <StyledTitle tag='h2' $fontSize='three'>
-              Carrinho de compras
+              Shopping cart
             </StyledTitle>
             <button
               type='button'
@@ -39,7 +39,7 @@ const CartModal = () => {
       <dialog>
         <header>
           <StyledTitle tag='h2' $fontSize='three'>
-            Carrinho de compras
+            Shopping cart
           </StyledTitle>
           <button
             type='button'
@@ -54,9 +54,9 @@ const CartModal = () => {
 
           <div className='emptyBox'>
             <StyledTitle tag='h3' $fontSize='three' textAlign='center'>
-              Sua sacola está vazia
+              Empty
             </StyledTitle>
-            <StyledParagraph textAlign='center'>Adicione itens</StyledParagraph>
+            <StyledParagraph textAlign='center'>Add items</StyledParagraph>
           </div>
         </div>
       </dialog>

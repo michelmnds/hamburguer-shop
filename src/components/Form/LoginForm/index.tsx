@@ -41,7 +41,7 @@ const LoginForm = () => {
     <StyledForm onSubmit={handleSubmit(submitForm)}>
       <Input
         textFieldInputProps={{
-          label: 'Nome',
+          label: 'Name',
           type: 'text',
           ...register('email'),
         }}
@@ -49,14 +49,14 @@ const LoginForm = () => {
       />
       <Input
         textFieldInputProps={{
-          label: 'Senha',
+          label: 'Password',
           type: 'password',
           ...register('password'),
         }}
         message={errors.password?.message}
       />
       <StyledButton type='submit' $buttonSize='default' $buttonStyle='green'>
-        Entrar
+        Login
       </StyledButton>
     </StyledForm>
   );
